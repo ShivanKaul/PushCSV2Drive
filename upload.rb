@@ -40,6 +40,8 @@ file = drive_api.files.insert.request_schema.new({
                                                      title: file_name,
                                                      mimeType: mime_type
                                                  })
+file.parents = [{id: '<folderId>'}]
+
 media = Google::APIClient::UploadIO.new(file_name, mime_type)
 
 # Upload file
